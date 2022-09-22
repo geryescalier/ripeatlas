@@ -1,5 +1,19 @@
-Tu primer sonda por software - Ripe Atlas
+TU PRIMER SONDA POR SOFTWARE - RIPE ATLAS  #gns3 #openwrt #debiam #ripeatlas
+===========================================
 
+He realizado esta documentación para que puedas tener un punto de partida de paso a paso, en caso que necesites configurar una sonda por software
+tanto de prueba como estable. Tambien puedes usarlo para realizar pruebas, posterior configurar tu propia sonda en tu propio router con openwrt,
+tanto para realizar pruebas como para tener tu sonda trabajando todo el tiempo.
+
+Al usar GNS3 te permite tener muchas opciones rapidas por software, a diferencia de hacerlo por hardware, crear tantas sondas como lo permita 
+tu ordenador (hardware), crear y destruir tanta veces como lo necesites, explicaciones graficas, tanto para desmostraciones como para resolver dudas,
+es ideal para realizar las pruebas que necesites!
+
+Todos los aportes para mejorar esta documentación son muy bienvenidos! no dudes en realizar tu aporte por favor, muchas gracias.
+
+Gery
+
+==============================================
 Requisitos:
 Conexión a Internet 
 Ordenador con OS  Debian o derivado
