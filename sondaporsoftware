@@ -22,6 +22,8 @@ Tener instalado GNS3
 ==================
 Imagen Quemu de Openwrt 
 ===================
+Configuraremos con esta imagen un router con openwrt, esto nos permitira instalar los paquetes de Ripe Atlas.
+
 Descarga en https://downloads.openwrt.org/releases/21.02.0-rc4/targets/x86/64/
 
 Descargar imagen >>> generic-ext4-combined.img.gz
@@ -40,16 +42,21 @@ Configurar en GNS3
 ==================
 Iniciar GNS3
 Menú > Edit > Preferences
+QUEMU > Quemu VMS
 Selecciona New 
 Name Ripe Atlas > Siguiente 
-Quemu binary --- RAM (dejamos ambas la seleccion de GNS3) > Siguiente 
+
+Quemu binary <---> RAM (dejamos ambas opciones seleccionadas por defecto) > Siguiente 
+
 Telnet > Siguiente 
-Seleccionamos New Image > selecionamos Browse > buscamos nuestra imagen redimensionada > Mensaje > seleccionamos si 
+Seleccionamos New Image > selecionamos Browse > buscamos nuestra imagen redimensionada > Mensaje > seleccionamos Si 
 Seleccionamos Finalizar
 Seleccionamos Aceptar
 
 Crear laboratorio 
 =================
+Seleccionamos en menú principal, File > New blank project
+Desde el menu izquierdo (iconos de dispositivos) seleccionamos > Browse all device:
 Arrastrar Nube a laboratorio para tener acceso a internet
 Arrastrar Switch genérico a laboratorio
 Arrastrar imagen (router con openwrt) de Ripe Atlas a laboratorio 
@@ -75,12 +82,12 @@ config interface 'lan'
         option gateway '192.168.0.1'
         option dns  '1.1.1.1'
 
-terminada actualización con tus datos, presionamos tecla Esc, luego  teclas de ":wq" sin comillas, esto dirá al editor vi que guarde cambios y salir.
+terminada actualización con tus datos, presionamos tecla Esc, luego  teclas ":wq" sin comillas, esto dirá al editor vi que guarde cambios y salir.
 
-Reiniciamos servicio con # service network reload
+Reiniciamos servicio con comando # service network reload
 
 Prueba a dns externo 
-# ping 1.1.1.1 
+Ingresa comando # ping 1.1.1.1 
 
 Ejemplo de respuesta a pin:
 # ping 1.1.1.1
@@ -94,18 +101,17 @@ PING 1.1.1.1 (1.1.1.1): 56 data bytes
 Instalar en Openwrt Ripe Atlas
 ======================
 
-# opkg update
-# opkg install atlas-sw-probe
+Ingresa comando # opkg update
+Ingresa comando # opkg install atlas-sw-probe
 
 
 Configurar sonda Atlas
 ========================
-Ingresar en # vi /etc/atlas/atlas.readme
+Ingresa comando # vi /etc/atlas/atlas.readme
 
 Instrucciones de configuración de la sonda Atlas
 
-Mira los comandos disponibles ingresando:
-
+Mira los comandos disponibles ingresando: 
 # /etc/init.d/atlas 
 
 Comandos disponibles:
@@ -144,6 +150,7 @@ Cuando termines las configuraciones anteriores, debes ejecutar los siguientes co
 # /etc/init.d/atlas start
 # /etc/init.d/atlas enable
 # /etc/init.d/atlas enabled
+# /etc/init.d/atlas status <<< solo en este comando veras un mensaje "running" esto confirma que tienes corriendo Ripe Atlas en openwrt.
  
 Registrar sonda
 ===================
@@ -170,6 +177,7 @@ City:
 Tu ciudad
 
 Country:
+-------
 Tu país 
 
 Public Key:
@@ -188,13 +196,11 @@ Lee y acepta los términos y condiciones (el recuadro debe estar seleccionado)
 
 Para enviar el formulario selecciona > Submit your application
 
-Recibirás mensaje:
+Recibirás los siguientes correos:
 
 Thank you for applying for a RIPE Atlas software probe! (¡Gracias por solicitar una sonda de software RIPE Atlas!)
 
-Recibirás correo con asunto: Thank you for applying for a RIPE Atlas software probe  (Gracias por solicitar una sonda de software RIPE Atlas)
-
-Recibirás segundo correo en unos 15 a 30 minutos (el tiempo puede variar): Your new RIPE Atlas software probe is created (Se ha creado tu nueva sonda de software RIPE Atlas)
+Recibirás un segundo correo en unos 15 a 30 minutos (el tiempo puede variar): Your new RIPE Atlas software probe is created (Se ha creado tu nueva sonda de software RIPE Atlas)
 
 Ingresa en https://atlas.ripe.net/ con tu usuario activo, selecciona > Probes and Anchors > Probes > podrás ver información de tu sonda activa.
 
