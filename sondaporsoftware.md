@@ -29,16 +29,12 @@ es ideal para realizar las pruebas que necesites!
 Todos los aportes para mejorar esta documentación son muy bienvenidos! no dudes en realizar tu aporte por favor, muchas gracias.
 
 ## Licencia
+Este trabajo está licenciado bajo [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
 
 [![Creative Commons License](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-sa/4.0/)
 
-# Este trabajo está licenciado bajo [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
 
 # Requisitos
-
-Tener instalado GNS3 // 
-Imagen Quemu de openwrt
-
 ```
 Todos los comandos que se verán en adelante, se ejecutan en modo usuario con privilegios (# aqui el comando)  
 ```
