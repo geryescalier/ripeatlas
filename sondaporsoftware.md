@@ -1,42 +1,61 @@
-TU PRIMER SONDA POR SOFTWARE - RIPE ATLAS  #gns3 #openwrt #debian #ripeatlas
-===========================================
+# TU PRIMER SONDA POR SOFTWARE - RIPE ATLAS 
 
-He realizado esta documentación para que puedas tener un punto de partida de paso a paso, en caso que necesites configurar una sonda por software
-tanto de prueba como estable. Tambien puedes usarlo para realizar pruebas, posterior configurar tu propia sonda en tu propio router con openwrt,
-tanto para realizar pruebas como para tener tu sonda trabajando todo el tiempo.
+# Introducción 
+Sitio web de [RIPE Atlas](https://atlas.ripe.net/) 
+```
+Con su ayuda, RIPE NCC está construyendo la red de medición de Internet más grande jamás creada. 
+RIPE Atlas emplea una red global  de sondas que miden la conectividad y la accesibilidad de Internet, 
+lo que brinda una comprensión sin precedentes del estado de Internet en tiempo real.
+```
+Sitio web  [RIPE Atlas en LACNIC](https://atlas.ripe.net/) 
+```
+RIPE Atlas es una de las plataformas de medición de parámetros de red en Internet de mayor despliegue
+a nivel mundial.Pone a disposición de sus miembros recursos que permiten realizar mediciones de redes.
+RIPE NCC es el organismo encargado de llevar adelante este enorme proyecto y cuenta con la colaboración
+de LACNIC para la región de Latinoamérica y Caribe.
 
-Al usar GNS3 te permite tener muchas opciones rapidas por software, a diferencia de hacerlo por hardware, crear tantas sondas como lo permita 
-tu ordenador (hardware), crear y destruir tanta veces como lo necesites, explicaciones graficas, tanto para desmostraciones como para resolver dudas,
+La plataforma está en expansión y enfoca sus esfuerzos en las zonas donde la penetración puede ser mejor: 
+Asia, Latinoamérica, Caribe y África.
+```
+
+Esta documentación esta pensada para poder realizar pruebas bajo laboratorios en [GNS3](https://www.gns3.com/software), relacionadas a las sondas por software, tener un punto de partida, paso a paso, 
+tanto de prueba como en producción. Entre otras pruebas que puedes realizar, crear tu laboratorio previo a configurar tu sonda en tu propio router con openwrt y
+tener tu sonda trabajando en producción.
+
+Usar GNS3 te permite tener muchas opciones rapidas por software, a diferencia de hacerlo por hardware, crear tantas sondas como lo permita 
+tu ordenador (hardware), crear y destruir tus sondas tanta veces como lo necesites, explicaciones graficas, tanto para desmostraciones como para resolver dudas,
 es ideal para realizar las pruebas que necesites!
 
 Todos los aportes para mejorar esta documentación son muy bienvenidos! no dudes en realizar tu aporte por favor, muchas gracias.
 
-Gery
+## Licencia
 
-Licencia CC BY-NC-SA 4.0. https://github.com/geryescalier/ripeatlas/blob/main/LICENSE.md
-==============================================
-Requisitos:
-Conexión a Internet 
-Ordenador con OS  Debian o derivado
-Cuenta activa  de usuario RIPE NCC
-Tener instalado GNS3 // Hardware básico recomendado: Procesador 4 núcleos, RAM 4GB, espacio libre en Disco 5GB
+[![Creative Commons License](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-sa/4.0/)
+
+# Este trabajo está licenciado bajo [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
+
+# Requisitos
+
+Tener instalado GNS3 // 
 Imagen Quemu de openwrt
 
--------------
-Todos los comandos que se verán en adelante, se ejecutan en modo usuario con privilegios (#)  
--------------
+```
+Todos los comandos que se verán en adelante, se ejecutan en modo usuario con privilegios (# aqui el comando)  
+```
 
-Conexión a Internet
-==================
-Ordenador con OS  Debian o basados en Debian
-==================
-Cuenta de usuario RIPE NCC
+## Conexión a Internet
+No es necesaria una conexion a internet de alto ancho de banda, importante debe ser una conexion cableada, adsl o fibra.
+
+## Ordenador con OS  Debian o basado en Debian
+Ordenador de mesa o portatil que tenga instalado distro Debian o distro basada en Debian.
+
+## Cuenta de usuario RIPE NCC
 Crea una cuenta en https://access.ripe.net/registration  (tu usuario sera tu correo electrónico)
-==================
-Tener instalado GNS3
-==================
-Imagen Quemu de Openwrt 
-===================
+
+## Tener instalado GNS3
+Hardware básico recomendado: Procesador 4 núcleos, RAM 4GB, espacio libre en Disco 5GB
+
+## Imagen Quemu de Openwrt 
 Configuraremos con esta imagen un router con openwrt, esto nos permitira instalar los paquetes de Ripe Atlas.
 
 Descarga en https://downloads.openwrt.org/releases/21.02.0-rc4/targets/x86/64/
