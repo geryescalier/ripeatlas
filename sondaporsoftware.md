@@ -23,8 +23,7 @@ tanto de prueba como en producción. Entre otras pruebas que puedes realizar, cr
 tener tu sonda trabajando en producción.
 
 Usar GNS3 te permite tener muchas opciones rapidas por software, a diferencia de hacerlo por hardware, crear tantas sondas como lo permita 
-tu ordenador (hardware), crear y destruir tus sondas tanta veces como lo necesites, explicaciones graficas, tanto para desmostraciones como para resolver dudas,
-es ideal para realizar las pruebas que necesites!
+tu ordenador (hardware), crear y destruir tus sondas tanta veces como lo necesites, realizar explicaciones mostrando el laboratorio de manera grafica, tanto para desmostraciones como para resolver dudas, es ideal para realizar las pruebas que necesites!
 
 Todos los aportes para mejorar esta documentación son muy bienvenidos! no dudes en realizar tu aporte por favor, muchas gracias.
 
