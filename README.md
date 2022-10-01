@@ -2,4 +2,4 @@
 Documentación relacionada a Ripe Atlas.
 
 
-[Tu primer sonda por software - RIPE Atlas](sondaporsoftware) 
+[Tu primer sonda por software - RIPE Atlas](sondaporsoftware.md) 
