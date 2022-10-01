@@ -18,9 +18,8 @@ La plataforma está en expansión y enfoca sus esfuerzos en las zonas donde la p
 Asia, Latinoamérica, Caribe y África.
 ```
 
-Esta documentación esta pensada para poder realizar pruebas bajo laboratorios en [GNS3](https://www.gns3.com/software), relacionadas a las sondas por software, tener un punto de partida, paso a paso, 
-tanto de prueba como en producción. Entre otras pruebas que puedes realizar, crear tu laboratorio previo a configurar tu sonda en tu propio router con openwrt y
-tener tu sonda trabajando en producción.
+Esta documentación esta pensada para poder realizar pruebas bajo laboratorios en [GNS3](https://www.gns3.com/software), relacionadas a las sondas por software, tener un punto de partida, paso a paso, tanto de prueba como en producción. 
+Entre otras pruebas que puedes realizar, crear tu laboratorio previo a configurar tu sonda en tu propio router con openwrt y tener tu sonda trabajando en producción.
 
 Usar GNS3 te permite tener muchas opciones rapidas por software, a diferencia de hacerlo por hardware, crear tantas sondas como lo permita 
 tu ordenador (hardware), crear y destruir tus sondas tanta veces como lo necesites, realizar explicaciones mostrando el laboratorio de manera grafica, tanto para desmostraciones como para resolver dudas, es ideal para realizar las pruebas que necesites!
