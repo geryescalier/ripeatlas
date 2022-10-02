@@ -90,16 +90,37 @@ Teniendo estos requisitos estamos preparados para inciar las configuraciones en 
 - Arrastra imagen router Ripe Atlas a laboratorio 
 
 # Configurar router para acceso a internet
-Conectar la nube con switch genérico >  switch genérico con router (Openwrt) Ripe Atlas > Iniciar Router Ripe Atlas > durante el inicio dar dos veces a tecla enter.
+- Selecciona en menú izquierdo, icono de cable utp (Add a link) 
+- Conecta puerto libre de la nube con puerto libre de switch genérico
+- Conecta puerto libre de switch genérico con puerto libre de router Ripe Atlas
+- Cursor/puntero de mouse sobre router Ripe Atlas, presiona boton secundario de tu mouse para desplegar menú
+- Selecciona Start, abrirara una nueva venta con conexion telnet, espera que inicie el router unos segundos, veras varias lineas con informacion del inicio de router, preciona la tecla enter en 2 ocasiones con un espacio de 3 segundos.
+- Finalizados los pasos anteriores, te encuentras con acceso a tu router y esta preparado para ser configurado, abajo puedes ver un ejemplo:
+```
+BusyBox v1.33.1 (2021-10-24 09:01:35 UTC) built-in shell (ash)
+
+  _______                     ________        __
+ |       |.-----.-----.-----.|  |  |  |.----.|  |_
+ |   -   ||  _  |  -__|     ||  |  |  ||   _||   _|
+ |_______||   __|_____|__|__||________||__|  |____|
+          |__| W I R E L E S S   F R E E D O M
+ -----------------------------------------------------
+ OpenWrt 21.02.1, r16325-88151b8303
+ -----------------------------------------------------
+=== WARNING! =====================================
+There is no root password defined on this device!
+Use the "passwd" command to set up a new password
+in order to prevent unauthorized SSH logins.
+--------------------------------------------------
+root@OpenWrt:/#
+ ```
 
 ## Configurar red en router
-ingresar en
+- Ya tienes acceso a tu router, ahora procede con las siguentes pasos para configurar el acceso a tu red y tengas conexion a internet, ingresa el comando
 ```
 # vi /etc/config/network
 ```
-Letra ·i· para insertar contenido
-
-(abajo veras un ejemplo, deberás configurar según los datos de tu red local)
+Con el anterior comando te encuentras editando el archivo network con el editor Vim, selecciona la Letra ·i· para insertar contenido, ahora puedes ingresar contenido, usa las flechas para insertar tus datos (abajo veras un ejemplo, deberás configurar (sustituir) según los datos de tu red local)
 ```
 config interface 'lan' 
 
@@ -111,43 +132,94 @@ config interface 'lan'
         option gateway '192.168.0.1'
         option dns  '1.1.1.1'
 ```
-terminada actualización con tus datos, presionamos tecla Esc, luego  teclas ":wq" sin comillas, esto dirá al editor vi que guarde cambios y salir.
+terminada la actualización del fichero con tus datos, presiona tecla Esc, luego  teclas ":wq" sin comillas, esto dirá al editor vim que guarde cambios y salga.
 
-Reiniciamos servicio con el comando
+- Reiniciamos servicio, ingresa el comando
 ```
 # service network reload
 ```
-Prueba a dns externo 
-Ingresa comando
+- Prueba a dns externo, ingresa comando
 ```
 # ping 1.1.1.1 
 ```
-Ejemplo de respuesta a ping
+- Ejemplo de respuesta a ping
 ```
 # ping 1.1.1.1
-PING 1.1.1.1 (1.1.1.1): 56 data bytes
-64 bytes from 1.1.1.1: seq=0 ttl=64 time=1.414 ms
-64 bytes from 1.1.1.1: seq=1 ttl=64 time=1.426 ms
+PING 1.1.1.1 (1.1.1.1) 56(84) bytes of data.
+64 bytes from 1.1.1.1: icmp_seq=1 ttl=64 time=0.615 ms
+64 bytes from 1.1.1.1: icmp_seq=2 ttl=64 time=0.486 ms
+64 bytes from 1.1.1.1: icmp_seq=3 ttl=64 time=0.504 ms
+64 bytes from 1.1.1.1: icmp_seq=4 ttl=64 time=0.498 ms
+64 bytes from 1.1.1.1: icmp_seq=5 ttl=64 time=0.495 ms
+64 bytes from 1.1.1.1: icmp_seq=6 ttl=64 time=0.495 ms
+64 bytes from 1.1.1.1: icmp_seq=7 ttl=64 time=0.527 ms
+^C
+--- 1.1.1.1 ping statistics ---
+7 packets transmitted, 7 received, 0% packet loss, time 6152ms
+rtt min/avg/max/mdev = 0.486/0.517/0.615/0.041 ms
+
 ```
-// si tenemos repuesta hemos finalizado.
+Espera unos 5 segundos, para finalizar la prueba de ping seleciona las teclas Ctrl + c
+-Si tienes un resultado similar al anterior, ya tienes configurado tu router con conexion a internet. 
 
 
 # Instalar en Openwrt Ripe Atlas
-Ingresa comando
+- Necesitamos instalar los paquetes de Ripe Atlas para que trabajen en tu Router, continuamos desde el paso anterior, ingresa comando
 ```
 # opkg update
 ```
-Ingresa comando
+El anterior comando actualiza los paquetes de tu Router, ahora podemos realizar la instalacion de los paquetes de Ripe Atlas, ingresa el comando
 ```
 # opkg install atlas-sw-probe
 ```
 
 # Configurar sonda Atlas
-
-Ingresa comando 
+- Ahora podemos configurar los paquetes de Ripe Atlas, ingresa comando 
 ```
 # vi /etc/atlas/atlas.readme
 ```
+Nos mostrara la siguiente información (en ingles) se ha realizado algunos cambios con respecto al readme original.
+```
+Para salir del archivo  /atlas.readme selecciona las teclas ":q" sin las comillas y la tecla enter.
+```
+El software de la sonda atlas requiere una clave rsa 2048-4096 para el registro.
+
+## Sigue estos pasos previos para registrar tu sonda en los sistemas ripe-atlas
+
+- Inserta tu nombre de usuario en el archivo de configuración de atlas, usa el comando
+```
+# vi /etc/config/atlas
+```
+- Selecciona tecla "i" para insertar 
+- Debes ubicar el cursor (usando las flechas de tu teclado) en la linea, option username 'ingresa aqui tu nombre usuario' (tu usuario es el correo electronico con el que creaste tu cuenta en la pagina de RIPE NCC)
+- Presiona tecla "Esc"
+- Para guardar y salir presiona las teclas ":wq"  >>> sin las comillas.
+- Crearemos una clave priv/pub. Usa el comando
+```
+# /etc/init.d/atlas create_key
+```
+ La clave priv/pub se almacenará en el directorio /etc/atlas/
+
+- Usa el comando
+```
+# /etc/init.d/atlas get_key 
+```
+para obtener la clave pública utilizada para el registro de la sonda.
+```
+Asegúrate de copiar la clave completa y que el último valor sea el nombre de usuario correcto.
+```
+- Cuando termines de realizar las configuraciones anteriores, ejecuta los siguientes comandos:
+``` 
+# /etc/init.d/atlas start
+
+# /etc/init.d/atlas enable
+
+# /etc/init.d/atlas enabled
+
+# /etc/init.d/atlas status 
+```
+solo en ultimo comando (status) veras un mensaje "running" esto confirma que se esta ejecutando Ripe Atlas en tu router.
+
 ## Instrucciones de configuración de la sonda Atlas
 Mira los comandos disponibles ingresando el comando
 ```
@@ -171,41 +243,7 @@ Comandos disponibles:
          load_backup 'backup.tar.gz' carga la clave ssh de copia de seguridad desde tar.gz
          create_key  crea la clave priv/pub de la sonda
 ```
-El software de la sonda atlas requiere una clave rsa 2048-4096 para el registro.
 
-Sigue estos pasos previos para registrar tu sonda en los sistemas ripe-atlas
-
-- Inserta tu nombre de usuario en el archivo de configuración de atlas, usa el comando
-```
-# vi /etc/config/atlas
-```
-- Selecciona tecla "i" para insertar 
-- En la linea, option username 'ingresa aqui tu nombre usuario'
-- Presiona tecla "Esc"
-- Para guardar y salir presiona las teclas ":wq"  >>> sin las comillas.
-  
-- Usa el comando
-```
-# /etc/init.d/atlas create_key
-```
-para crear una clave priv/pub. La clave priv/pub se almacenará en el directorio /etc/atlas/
-
-- Usa el comando
-```
-# /etc/init.d/atlas get_key 
-```
-para obtener la clave pública utilizada para el registro de la sonda.
-
-- Asegúrate de copiar la clave completa y que el último valor sea el nombre de usuario correcto.
-
-- Cuando termines las configuraciones anteriores, debes ejecutar los siguientes comandos:
-``` 
-# /etc/init.d/atlas start
-# /etc/init.d/atlas enable
-# /etc/init.d/atlas enabled
-# /etc/init.d/atlas status 
-```
-solo en ultimo comando (status) veras un mensaje "running" esto confirma que se esta ejecutando Ripe Atlas en openwrt.
  
 # Registro de sonda por software
 Debes tener activa tu sesión en la pagina de RIPE NCC, ingresa en https://atlas.ripe.net/apply/swprobe/
@@ -213,7 +251,24 @@ Debes tener activa tu sesión en la pagina de RIPE NCC, ingresa en https://atlas
 Ingresaras al formulario para completar los datos.
 
 ## AS Number
-Para conocer tu AS number debes identificar cual es la ip que tienes asignada, puedes usar https://www.lacnic.net/1002/1/lacnic/whois (en esta web veras tu ip asignada en la parte superior derecha "Su dirección IP es:" ) u otro sitio web de tu preferencia.
+Para conocer tu [Sistema Autonomo](https://es.wikipedia.org/wiki/Sistema_aut%C3%B3nomo) (AS number) debes identificar cual es la ip publica que tienes asignada.
+### Conocer tu IP pública y ASN desde la web
+- Ingresa en https://www.ripe.net/ en la parte superiro derecha veras 
+```
+Your IP address is: xx.xx.xx.xx <<< mostrara tu ip pública
+```
+- En la casilla donde indica "Search IP Address or ASN" ingresa tu ip pública, presiona la tecla enter o selecciona la lupa para que realice la busqueda de tu ASN
+- La busqueda te lleva a una nueva pagina, busca la linea que pone:
+```
+origin:         AS (AQUI MOSTRARA LA NUMERACION DE TU AS)
+```
+- En el formulario solo debes poner los números de tu AS
+```
+origin:          AS12757
+
+En el formulario solo debes ingresar 12757
+```
+### Conocer tu ASN desde cli
 
 - Desde tu cli favorito usa el comando seguido de tu ip:
 ```
@@ -224,7 +279,11 @@ Para conocer tu AS number debes identificar cual es la ip que tienes asignada, p
 origin:         AS(AQUI MOSTRARA LA NUMERACION DE TU AS)
 ```
 - En el formulario solo debes poner los números de tu AS
+```
+origin:          AS12757
 
+En el formulario solo debes ingresar 12757
+```
 ## City
 
 Tu ciudad
@@ -234,7 +293,7 @@ Tu ciudad
 Tu país 
 ```
 ## Public Key
-Usa el comando 
+- Usa el comando 
 ```
 # /etc/init.d/atlas get_key 
 ```
@@ -242,7 +301,7 @@ obtendras la clave pública utilizada para el registro de la sonda.
 - Asegúrate de copiar la clave completa y que el último valor sea el nombre de usuario correcto.
 
 ## Notes
-Inmgresa alguna referencia general con la que quieras identificar tu sonda por ejemplo: ·Sonda Mi universidad // Sonda Mi Zona // Otros·
+Ingresa alguna referencia general con la que quieras identificar tu sonda, por ejemplo: Sonda Mi universidad // Sonda Mi Zona // Otros.
 
 ## I accept the RIPE Atlas Service Terms and Conditions
 - Lee y acepta los términos y condiciones (el recuadro debe estar seleccionado)
