@@ -3,28 +3,31 @@
 # Introducción 
 Sitio web de [RIPE Atlas](https://atlas.ripe.net/) 
 ```
-Con su ayuda, RIPE NCC está construyendo la red de medición de Internet más grande jamás creada. 
-RIPE Atlas emplea una red global  de sondas que miden la conectividad y la accesibilidad de Internet, 
-lo que brinda una comprensión sin precedentes del estado de Internet en tiempo real.
+Con su ayuda, RIPE NCC está construyendo la red de medición de Internet más grande jamás creada. RIPE Atlas emplea 
+una red global  de sondas que miden la conectividad y la accesibilidad de Internet, lo que brinda una comprensión 
+sin precedentes del estado de Internet en tiempo real.
 ```
 Sitio web  [RIPE Atlas en LACNIC](https://atlas.ripe.net/) 
 ```
-RIPE Atlas es una de las plataformas de medición de parámetros de red en Internet de mayor despliegue
-a nivel mundial.Pone a disposición de sus miembros recursos que permiten realizar mediciones de redes.
-RIPE NCC es el organismo encargado de llevar adelante este enorme proyecto y cuenta con la colaboración
-de LACNIC para la región de Latinoamérica y Caribe.
+RIPE Atlas es una de las plataformas de medición de parámetros de red en Internet de mayor despliegue a nivel mundial.
+Pone a disposición de sus miembros recursos que permiten realizar mediciones de redes. RIPE NCC es el organismo encargado
+de llevar adelante este enorme proyecto y cuenta con la colaboración de LACNIC para la región de Latinoamérica y Caribe.
 
-La plataforma está en expansión y enfoca sus esfuerzos en las zonas donde la penetración puede ser mejor: 
-Asia, Latinoamérica, Caribe y África.
+La plataforma está en expansión y enfoca sus esfuerzos en las zonas donde la penetración puede ser mejor: Asia, 
+Latinoamérica, Caribe y África.
 ```
 
-Esta documentación esta pensada para poder realizar pruebas bajo laboratorios en [GNS3](https://www.gns3.com/software), relacionadas a las sondas por software, tener un punto de partida, paso a paso, tanto de prueba como en producción. 
-Entre otras pruebas que puedes realizar, crear tu laboratorio previo a configurar tu sonda en tu propio router con openwrt y tener tu sonda trabajando en producción.
+Esta documentación esta pensada para poder realizar pruebas paso a paso bajo laboratorios en [GNS3](https://www.gns3.com/software), se detallara la configuración de un router con [OpenWrt](https://openwrt.org/es/start), la instalación de paquetes de Ripe Atlas, registro de la sonda en la plataforma de Riple Atlas, con las pruebas correspondientes de correcto funcionamiento.
+
+Otra prueba que puedes realizar posterior a esta, es crear tu laboratorio para configurar tu sonda, basado en un modelo especifico de router que tengas y [sea compatible con openwrt](https://openwrt.org/es/toh/start) este tema no se vera en esta documentación.
 
 Usar GNS3 te permite tener muchas opciones rapidas por software, a diferencia de hacerlo por hardware, crear tantas sondas como lo permita 
 tu ordenador (hardware), crear y destruir tus sondas tanta veces como lo necesites, realizar explicaciones mostrando el laboratorio de manera grafica, tanto para desmostraciones como para resolver dudas, es ideal para realizar las pruebas que necesites!
 
 Todos los aportes para mejorar esta documentación son muy bienvenidos! no dudes en realizar tu aporte por favor, muchas gracias.
+
+## Importante
+En Ripe Atlas recomiendan tener la sonda conectada todo el tiempo posible, esto permitira que la sonda reporte información constante y pueda ser consultada a futuro (información historica). Es muy importante que al terminar las pruebas que necesites realizar en tu laboratorio, tengas preparado medio fisico o logico para que alojes tu sonda y esta pueda estar operativa 24 x 7. 
 
 ## Licencia
 Este trabajo está licenciado bajo [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
