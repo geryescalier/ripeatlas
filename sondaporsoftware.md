@@ -1,4 +1,32 @@
 # TU PRIMER SONDA POR SOFTWARE - RIPE ATLAS 
+INDICE
+- [Introducción](https://github.com/geryescalier/ripeatlas/edit/main/sondaporsoftware.md#Introducción)
+   - [Importante](https://github.com/geryescalier/ripeatlas/edit/main/sondaporsoftware.md##Importante)
+   - [Licencia](https://github.com/geryescalier/ripeatlas/edit/main/sondaporsoftware.md##Licencia)
+- [Requisitos](https://github.com/geryescalier/ripeatlas/edit/main/sondaporsoftware.md#Requisitos)
+   - [Conexión a Internet](https://github.com/geryescalier/ripeatlas/edit/main/sondaporsoftware.md##Conexión_a_Internet)
+   - [Ordenador](https://github.com/geryescalier/ripeatlas/edit/main/sondaporsoftware.md##Ordenador)
+   - [Cuenta de usuario RIPE NCC](https://github.com/geryescalier/ripeatlas/edit/main/sondaporsoftware.md##Cuenta_de_usuario_RIPE_NCC)
+   - [GNS3](https://github.com/geryescalier/ripeatlas/edit/main/sondaporsoftware.md##GNS3)
+   - [Imagen Quemu de Openwrt](https://github.com/geryescalier/ripeatlas/edit/main/sondaporsoftware.md##Imagen_Quemu_de_Openwrt)   
+- [Configuración de GNS3](https://github.com/geryescalier/ripeatlas/edit/main/sondaporsoftware.md#Configuración_de_GNS3)
+- [Crear laboratorio](https://github.com/geryescalier/ripeatlas/edit/main/sondaporsoftware.md#Crear_laboratorio)
+- [Configurar router para acceso a internet](https://github.com/geryescalier/ripeatlas/edit/main/sondaporsoftware.md#Configurar_router_para_acceso_a_internet)
+   - [Configurar red en router](https://github.com/geryescalier/ripeatlas/edit/main/sondaporsoftware.md##Configurar_red_en_router)   
+- [Instalar en Openwrt Ripe Atlas](https://github.com/geryescalier/ripeatlas/edit/main/sondaporsoftware.md#Instalar_en_OpenWrt_Ripe_Atlas)
+- [Configurar sonda Ripe Atlas](https://github.com/geryescalier/ripeatlas/edit/main/sondaporsoftware.md#Configurar_sonda_Ripe_Atlas)
+    - [Pasos previos para registrar sonda](https://github.com/geryescalier/ripeatlas/edit/main/sondaporsoftware.md##Pasos_previos_para_registrar_sonda)   
+    - [Comandos Ripe Atlas](https://github.com/geryescalier/ripeatlas/edit/main/sondaporsoftware.md##Comandos_Ripe_Atlas)   
+- [Registro de sonda por software](https://github.com/geryescalier/ripeatlas/edit/main/sondaporsoftware.md#Registro_de_sonda_por_software)
+    - [AS Number](https://github.com/geryescalier/ripeatlas/edit/main/sondaporsoftware.md##AS_Number)   
+      - [Conocer tu IP pública y ASN desde la web](https://github.com/geryescalier/ripeatlas/edit/main/sondaporsoftware.md##Conocer_tu_IP_pública_y_ASN_desde_la_web)   
+      - [Conocer tu ASN desde cli](https://github.com/geryescalier/ripeatlas/edit/main/sondaporsoftware.md##Conocer_tu_ASN_desde_cli)  
+    - [City](https://github.com/geryescalier/ripeatlas/edit/main/sondaporsoftware.md##City)   
+    - [Country](https://github.com/geryescalier/ripeatlas/edit/main/sondaporsoftware.md##Country)   
+    - [Public Key](https://github.com/geryescalier/ripeatlas/edit/main/sondaporsoftware.md##Public_Key)   
+    - [I accept the RIPE Atlas Service Terms and Conditions](https://github.com/geryescalier/ripeatlas/edit/main/sondaporsoftware.md##I_accept_the_RIPE_Atlas_Service_Terms_and_Conditions)   
+- [Fin](https://github.com/geryescalier/ripeatlas/edit/main/sondaporsoftware.md##Fin)   
+
 
 # Introducción 
 Sitio web de [RIPE Atlas](https://atlas.ripe.net/) 
@@ -38,7 +66,6 @@ Este trabajo está licenciado bajo [Creative Commons Attribution-ShareAlike 4.0 
 # Requisitos
 
 > Todos los comandos que se verán en adelante, se ejecutan en modo usuario con privilegios (# aqui el comando)  
-
 
 ## Conexión a Internet
 No es necesaria una conexion a internet de alto ancho de banda, importante debe ser una conexion cableada, adsl o fibra.
@@ -163,7 +190,7 @@ Espera unos 5 segundos, para finalizar la prueba de ping seleciona las teclas Ct
 -Si tienes un resultado similar al anterior, ya tienes configurado tu router con conexion a internet. 
 
 
-# Instalar en Openwrt Ripe Atlas
+# Instalar en OpenWrt Ripe Atlas
 - Necesitamos instalar los paquetes de Ripe Atlas para que trabajen en tu Router, continuamos desde el paso anterior, ingresa comando
 ```
 # opkg update
@@ -173,7 +200,7 @@ El anterior comando actualiza los paquetes de tu Router, ahora podemos realizar 
 # opkg install atlas-sw-probe
 ```
 
-# Configurar sonda Atlas
+# Configurar sonda Ripe Atlas
 - Ahora podemos configurar los paquetes de Ripe Atlas, ingresa comando 
 ```
 # vi /etc/atlas/atlas.readme
@@ -184,7 +211,7 @@ Para salir del archivo  /atlas.readme selecciona las teclas ":q" sin las comilla
 ```
 El software de la sonda atlas requiere una clave rsa 2048-4096 para el registro.
 
-## Sigue estos pasos previos para registrar tu sonda en los sistemas ripe-atlas
+## Pasos previos para registrar sonda
 
 - Inserta tu nombre de usuario en el archivo de configuración de atlas, usa el comando
 ```
@@ -220,7 +247,7 @@ Asegúrate de copiar la clave completa y que el último valor sea el nombre de u
 ```
 solo en ultimo comando (status) veras un mensaje "running" esto confirma que se esta ejecutando Ripe Atlas en tu router.
 
-## Instrucciones de configuración de la sonda Atlas
+## Comandos Ripe Atlas
 Mira los comandos disponibles ingresando el comando
 ```
 # /etc/init.d/atlas 
@@ -243,8 +270,6 @@ Comandos disponibles:
          load_backup 'backup.tar.gz' carga la clave ssh de copia de seguridad desde tar.gz
          create_key  crea la clave priv/pub de la sonda
 ```
-
- 
 # Registro de sonda por software
 Debes tener activa tu sesión en la pagina de RIPE NCC, ingresa en https://atlas.ripe.net/apply/swprobe/
 
@@ -312,7 +337,7 @@ Recibirás los siguientes correos:
 - Recibirás un segundo correo en unos 15 a 30 minutos (el tiempo puede variar): Your new RIPE Atlas software probe is created (Se ha creado tu nueva sonda de software RIPE Atlas)
 - Ingresa en https://atlas.ripe.net/ con tu usuario activo, selecciona > Probes and Anchors > Probes > podrás ver información de tu sonda activa.
 
-# Fin de la configuracion y registro
+# Fin
 ¡Felicidades ya tienes tu sonda configurada y registrada!
 
 
