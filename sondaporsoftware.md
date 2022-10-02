@@ -71,25 +71,23 @@ Teniendo estos requisitos estamos preparados para inciar las configuraciones en 
 
 # Configuración de GNS3
 
-Iniciar GNS3
-Menú > Edit > Preferences
-QUEMU > Quemu VMS
-Selecciona New 
-Name Ripe Atlas > Siguiente 
-
-Quemu binary <---> RAM (dejamos ambas opciones seleccionadas por defecto) > Siguiente 
-
-Telnet > Siguiente 
-Seleccionamos New Image > selecionamos Browse > buscamos nuestra imagen redimensionada > Mensaje > seleccionamos Si 
-Seleccionamos Finalizar
-Seleccionamos Aceptar
+- Inicia GNS3
+- Selecciona Menú > Edit > Preferences
+- Seleciona QUEMU > Quemu VMS
+- Selecciona New 
+- Name: Ripe Atlas > Siguiente 
+- Quemu binary <---> RAM (deja ambas opciones seleccionadas por defecto) > Siguiente 
+- Telnet > Siguiente 
+- Selecciona New Image > seleciona Browse > busca imagen de quemu redimensionada > Mensaje > selecciona Si 
+- Selecciona Finalizar
+- Selecciona Aceptar
 
 # Crear laboratorio 
-Seleccionamos en menú principal, File > New blank project
-Desde el menu izquierdo (iconos de dispositivos) seleccionamos > Browse all device:
-Arrastrar Nube a laboratorio para tener acceso a internet
-Arrastrar Switch genérico a laboratorio
-Arrastrar imagen (router con openwrt) de Ripe Atlas a laboratorio 
+- Selecciona en menú principal, File > New blank project
+- Desde el menu izquierdo (iconos de dispositivos) selecciona > Browse all device:
+- Arrastra Nube a laboratorio para tener acceso a internet
+- Arrastra Switch genérico a laboratorio
+- Arrastra imagen router Ripe Atlas a laboratorio 
 
 # Configurar router para acceso a internet
 Conectar la nube con switch genérico >  switch genérico con router (Openwrt) Ripe Atlas > Iniciar Router Ripe Atlas > durante el inicio dar dos veces a tecla enter.
