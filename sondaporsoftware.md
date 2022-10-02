@@ -27,7 +27,7 @@ tu ordenador (hardware), crear y destruir tus sondas tanta veces como lo necesit
 Todos los aportes para mejorar esta documentación son muy bienvenidos! no dudes en realizar tu aporte por favor, muchas gracias.
 
 ## Importante
-En Ripe Atlas recomiendan tener la sonda conectada todo el tiempo posible, esto permitira que la sonda reporte información constante y pueda ser consultada a futuro (información historica). Es muy importante que al terminar las pruebas que necesites realizar en tu laboratorio, tengas preparado medio fisico o logico para que alojes tu sonda y esta pueda estar operativa 24 x 7. 
+En Ripe Atlas recomiendan tener la sonda conectada todo el tiempo posible, esto permitira que la sonda reporte información constante y pueda ser consultada a futuro (información historica). Es muy importante que al terminar las pruebas que necesites realizar en tu laboratorio, tengas preparado uno o varios medios fisicos (Router, RaberryPi, Pc, otros) o logicos (gns3, docker, lxc, otros) para que alojes tu sonda y esta pueda estar operativa 24 x 7. 
 
 ## Licencia
 Este trabajo está licenciado bajo [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
