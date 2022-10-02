@@ -55,18 +55,19 @@ GNS3 es multiplataforma puedes instalarlo en los sistemas operativos mas usados 
 ## Imagen Quemu de Openwrt 
 Configuraremos con esta imagen un router con openwrt, esto nos permitira instalar los paquetes de Ripe Atlas.
 
-Descarga en https://downloads.openwrt.org/releases/21.02.0-rc4/targets/x86/64/
+Descarga imagen Quemu desde https://downloads.openwrt.org/releases/21.02.0-rc4/targets/x86/64/
 
-Descargar imagen >>> generic-ext4-combined.img.gz
+Descargar imagen >>> [generic-ext4-combined.img.gz]([https://atlas.ripe.net/](https://downloads.openwrt.org/releases/21.02.0-rc4/targets/x86/64/openwrt-21.02.0-rc4-x86-64-generic-ext4-combined.img.gz))  
 
-Descomprimir 
-gunzip generic-ext4-combined.img.gz
-
-Redimensionar
-qemu-img resize generic-ext4-combined.img.gz 300M
-
+En tu terminal, debes estar ubicado en el directorio donde tengas la imagen descargada, ejecuta comando.
+```
+:~$ gunzip generic-ext4-combined.img.gz
+```
+A continuación procedemos a redimensionar imagen de Quemu, ejecuta comando.
+```
+:~$ qemu-img resize generic-ext4-combined.img.gz 300M
+```
 Teniendo estos requisitos estamos preparados para inciar las configuraciones en GNS3
-
 
 # Configuración de GNS3
 
