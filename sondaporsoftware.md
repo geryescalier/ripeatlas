@@ -36,9 +36,9 @@ Este trabajo está licenciado bajo [Creative Commons Attribution-ShareAlike 4.0 
 
 
 # Requisitos
-```
-Todos los comandos que se verán en adelante, se ejecutan en modo usuario con privilegios (# aqui el comando)  
-```
+
+> Todos los comandos que se verán en adelante, se ejecutan en modo usuario con privilegios (# aqui el comando)  
+
 
 ## Conexión a Internet
 No es necesaria una conexion a internet de alto ancho de banda, importante debe ser una conexion cableada, adsl o fibra.
