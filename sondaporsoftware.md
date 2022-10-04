@@ -45,7 +45,7 @@ La plataforma está en expansión y enfoca sus esfuerzos en las zonas donde la p
 Latinoamérica, Caribe y África.
 ```
 
-Esta documentación esta pensada para poder realizar pruebas paso a paso bajo laboratorios en [GNS3](https://www.gns3.com/software), para configurar una sonda por software y su registro.Se detallara la configuración de un router con [OpenWrt](https://openwrt.org/es/start), la instalación de paquetes de Ripe Atlas, registro de la sonda en la plataforma de Riple Atlas, con sus correspondientes pruebas de funcionamiento.
+Esta documentación esta pensada para poder realizar pruebas paso a paso bajo laboratorios en [GNS3](https://www.gns3.com/software), para configurar una sonda por software y su registro. Se detallara la configuración de un router con [OpenWrt](https://openwrt.org/es/start), la instalación de paquetes de Ripe Atlas, registro de la sonda en la plataforma de Riple Atlas y sus correspondientes pruebas de funcionamiento.
 
 Otra prueba que puedes realizar posterior a esta, es crear tu laboratorio para configurar tu sonda, basado en un modelo especifico de router que tengas y [sea compatible con openwrt](https://openwrt.org/es/toh/start) este tema no se vera en esta documentación.
 
