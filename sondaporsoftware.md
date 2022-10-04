@@ -84,7 +84,7 @@ Configuraremos con esta imagen un router con openwrt, esto nos permitira instala
 
 Descarga imagen Quemu desde https://downloads.openwrt.org/releases/21.02.0-rc4/targets/x86/64/
 
-Descargar imagen >>> [generic-ext4-combined.img.gz]([https://atlas.ripe.net/](https://downloads.openwrt.org/releases/21.02.0-rc4/targets/x86/64/openwrt-21.02.0-rc4-x86-64-generic-ext4-combined.img.gz))  
+Descargar imagen >>> [generic-ext4-combined.img.gz](https://downloads.openwrt.org/releases/21.02.0-rc4/targets/x86/64/openwrt-21.02.0-rc4-x86-64-generic-ext4-combined.img.gz)  
 
 En tu terminal, debes estar ubicado en el directorio donde tengas la imagen descargada, ejecuta comando.
 ```
