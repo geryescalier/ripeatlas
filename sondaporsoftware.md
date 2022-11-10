@@ -1,6 +1,8 @@
 # TU PRIMER SONDA POR SOFTWARE - RIPE ATLAS 
 INDICE
 - [Introducción](https://github.com/geryescalier/ripeatlas/edit/main/sondaporsoftware.md#Introducción)
+- [Introducción](#introducción)
+
    - [Importante](https://github.com/geryescalier/ripeatlas/edit/main/sondaporsoftware.md##Importante)
    - [Licencia](https://github.com/geryescalier/ripeatlas/edit/main/sondaporsoftware.md##Licencia)
 - [Requisitos](https://github.com/geryescalier/ripeatlas/edit/main/sondaporsoftware.md#Requisitos)
