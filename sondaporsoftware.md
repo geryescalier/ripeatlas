@@ -8,7 +8,7 @@ INDICE
    - [Ordenador](#ordenador)
    - [Cuenta de usuario RIPE NCC](#cuenta-de-usuario-ripe-ncc)
    - [GNS3](#gns3)
-   - [Imagen Quemu de Openwrt](#imagen-quemu-de-openwrt)   
+   - [Imagen Qemu de Openwrt](#imagen-qemu-de-openwrt)   
 - [Configuración de GNS3](#configuración-de-gns3)
 - [Crear laboratorio](#crear-laboratorio)
 - [Configurar router para acceso a internet](#configurar-router-para-acceso-a-internet)
@@ -79,10 +79,10 @@ Crea una cuenta en https://access.ripe.net/registration  (tu usuario sera tu cor
 ## GNS3
 GNS3 es multiplataforma puedes instalarlo en los sistemas operativos mas usados acutalmente. Se recomienda Hardware básico: Procesador 4 núcleos, RAM 4GB, espacio libre en Disco 5GB
 
-## Imagen Quemu de Openwrt 
+## Imagen Qemu de Openwrt 
 Configuraremos con esta imagen un router con openwrt, esto nos permitira instalar los paquetes de Ripe Atlas.
 
-Descarga imagen Quemu desde https://downloads.openwrt.org/releases/21.02.0-rc4/targets/x86/64/
+Descarga imagen Qemu desde https://downloads.openwrt.org/releases/21.02.0-rc4/targets/x86/64/
 
 Descargar imagen >>> [generic-ext4-combined.img.gz](https://downloads.openwrt.org/releases/21.02.0-rc4/targets/x86/64/openwrt-21.02.0-rc4-x86-64-generic-ext4-combined.img.gz)  
 
@@ -90,7 +90,7 @@ En tu terminal, debes estar ubicado en el directorio donde tengas la imagen desc
 ```
 :~$ gunzip generic-ext4-combined.img.gz
 ```
-A continuación procedemos a redimensionar imagen de Quemu, ejecuta comando.
+A continuación procedemos a redimensionar la imagen, ejecuta comando.
 ```
 :~$ qemu-img resize generic-ext4-combined.img.gz 300M
 ```
@@ -100,12 +100,12 @@ Teniendo estos requisitos estamos preparados para inciar las configuraciones en 
 
 - Inicia GNS3
 - Selecciona Menú > Edit > Preferences
-- Seleciona QUEMU > Quemu VMS
+- Seleciona QEMU > Qemu VMS
 - Selecciona New 
 - Name: Ripe Atlas > Siguiente 
-- Quemu binary <---> RAM (deja ambas opciones seleccionadas por defecto) > Siguiente 
+- Qemu binary <---> RAM (deja ambas opciones seleccionadas por defecto) > Siguiente 
 - Telnet > Siguiente 
-- Selecciona New Image > seleciona Browse > busca imagen de quemu redimensionada > Mensaje > selecciona Si 
+- Selecciona New Image > seleciona Browse > busca imagen de Qemu redimensionada > Mensaje > selecciona Si 
 - Selecciona Finalizar
 - Selecciona Aceptar
 
