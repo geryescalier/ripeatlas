@@ -1,4 +1,9 @@
 # TU PRIMER SONDA POR SOFTWARE - RIPE ATLAS 
+
+![Laboratorio de ejmplo](https://github.com/geryescalier/ripeatlas/blob/main/imagenes/RIPEgns3.png)
+```
+Ejemplo de dos sondas conectadas a switch con conexion a internet, totalmente operativas, laboratorio en gns3.
+```
 INDICE
 - [Introducción](#introducción)
    - [Importante](#importante)
