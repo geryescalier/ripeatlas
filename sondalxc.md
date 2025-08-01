@@ -18,3 +18,4 @@ de llevar adelante este enorme proyecto y cuenta con la colaboración de LACNIC 
 La plataforma está en expansión y enfoca sus esfuerzos en las zonas donde la penetración puede ser mejor: Asia, 
 Latinoamérica, Caribe y África.
 ```
+Esta documentación esta pensada para poder realizar pruebas paso a paso bajo laboratorios en [LXC](https://linuxcontainers.org), para configurar una sonda por software y su registro. Se detallara la configuración de un router con [OpenWrt](https://openwrt.org/es/start), la instalación de paquetes de Ripe Atlas, registro de la sonda en la plataforma de Riple Atlas y sus correspondientes pruebas de funcionamiento.
