@@ -19,3 +19,7 @@ La plataforma está en expansión y enfoca sus esfuerzos en las zonas donde la p
 Latinoamérica, Caribe y África.
 ```
 Esta documentación esta pensada para poder realizar pruebas paso a paso bajo laboratorios en [LXC](https://linuxcontainers.org), para configurar una sonda por software y su registro. Se detallara la configuración de un router con [OpenWrt](https://openwrt.org/es/start), la instalación de paquetes de Ripe Atlas, registro de la sonda en la plataforma de Riple Atlas y sus correspondientes pruebas de funcionamiento.
+
+Usar Contenedores LXC te permite tener muchas opciones rapidas por software, a diferencia de hacerlo por hardware, crear tantas sondas como lo permita tu ordenador (hardware), crear y destruir tus sondas tanta veces como lo necesites, realizar explicaciones mostrando el laboratorio de manera grafica (por medio de script), tanto para desmostraciones como para resolver dudas, es ideal para realizar las pruebas que necesites!
+
+Todos los aportes para mejorar esta documentación son muy bienvenidos! no dudes en realizar tu aporte por favor, muchas gracias.
