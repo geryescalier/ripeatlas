@@ -18,8 +18,8 @@ de llevar adelante este enorme proyecto y cuenta con la colaboración de LACNIC 
 La plataforma está en expansión y enfoca sus esfuerzos en las zonas donde la penetración puede ser mejor: Asia, 
 Latinoamérica, Caribe y África.
 ```
-Esta documentación esta pensada para poder realizar pruebas paso a paso bajo laboratorios en [LXC](https://linuxcontainers.org), para configurar una sonda por software y su registro. Se detallara la configuración de un router con [OpenWrt](https://openwrt.org/es/start), la instalación de paquetes de Ripe Atlas, registro de la sonda en la plataforma de Riple Atlas y sus correspondientes pruebas de funcionamiento.
+Esta documentación está diseñada para realizar pruebas paso a paso en laboratorios utilizando contenedores [LXC](https://linuxcontainers.org). El objetivo es configurar una sonda de software y registrarla en la plataforma. Se detallará la configuración de un router con [OpenWrt](https://openwrt.org/es/start), la instalación de paquetes de RIPE Atlas, el registro de la sonda en la plataforma de RIPE Atlas y las pruebas de funcionamiento correspondientes.
 
-Usar Contenedores LXC te permite tener muchas opciones rapidas por software, a diferencia de hacerlo por hardware, crear tantas sondas como lo permita tu ordenador (hardware), crear y destruir tus sondas tanta veces como lo necesites, realizar explicaciones mostrando el laboratorio de manera grafica (por medio de script), tanto para desmostraciones como para resolver dudas, es ideal para realizar las pruebas que necesites!
+Utilizar contenedores LXC ofrece numerosas ventajas en comparación con el hardware físico. Permite crear tantas sondas como lo permita tu hardware, y puedes crear y destruir estas sondas tantas veces como sea necesario. Además, facilita la realización de demostraciones gráficas mediante scripts, lo que es ideal tanto para presentaciones como para resolver dudas. Esta flexibilidad es perfecta para llevar a cabo las pruebas que necesites.
 
-Todos los aportes para mejorar esta documentación son muy bienvenidos! no dudes en realizar tu aporte por favor, muchas gracias.
+¡Todos los aportes para mejorar esta documentación son muy bienvenidos! No dudes en realizar tu contribución. ¡Muchas gracias!
