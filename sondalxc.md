@@ -48,8 +48,7 @@ lxc-ls -f
 No es necesaria una conexion a internet de alto ancho de banda, importante debe ser una conexion cableada, adsl o fibra.
 
 ## Ordenador 
-Se recomienda un ordenador de mesa o portatil que tenga instalado distro Debian (GNU/Linux) o distro basada en Debian. GNS3 es multiplataforma puedes instalarlo en los sistemas operativos mas usados acutalmente.
-
+Se recomienda un ordenador de mesa o portatil que tenga instalado distro Debian (GNU/Linux) o distro basada en Debian.
 
 
 ## Cuenta de usuario RIPE NCC
