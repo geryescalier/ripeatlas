@@ -68,3 +68,46 @@ Requisitos de Hardware Básicos:
   - Espacio: Al menos 10 GB de espacio libre en el disco. Esto incluye espacio para el sistema operativo host, LXC, y los contenedores que planeas ejecutar. Para contenedores más grandes o múltiples contenedores, considera tener más espacio disponible.
 - Conexión: Una conexión a Internet estable es recomendada para descargar imágenes de contenedores y actualizaciones. Red: Interfaz de Red: Asegúrate de que tu sistema tenga una interfaz de red funcional para que los contenedores puedan comunicarse con la red externa.
 
+# Instalar LXC en Debian 11
+Actualiza el sistema:
+```
+sudo apt update
+sudo apt full-upgrade
+```
+Instala LXC:
+```
+sudo apt install lxc
+```
+# Crear un bridge de red para LXC
+Instala el paquete bridge-utils:
+```
+sudo apt install bridge-utils
+```
+Crea un bridge de red llamado br0:
+```
+sudo brctl addbr br0
+```
+Agrega la interfaz física eth0 al bridge (reemplaza eth0 con la interfaz que estés utilizando):
+```
+sudo brctl addif br0 eth0
+```
+Configura la IP del bridge (si lo deseas):
+```
+sudo ip addr add 192.168.1.100/24 dev br0
+```
+Activa el bridge:
+```
+sudo ip link set br0 up
+```
+Edita el archivo /etc/network/interfaces para que el bridge se active automáticamente al arrancar el sistema:
+```
+auto br0
+iface br0 inet dhcp
+    bridge_ports eth0
+    bridge_stp off
+    bridge_fd 0.0
+```
+Reinicia el servicio de red:
+```
+sudo systemctl restart networking
+```
