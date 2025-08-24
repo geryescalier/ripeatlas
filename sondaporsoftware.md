@@ -4,7 +4,7 @@
 ```
 Ejemplo de dos sondas conectadas a switch con conexion a internet, totalmente operativas, laboratorio en gns3.
 ```
-INDICE
+# INDICE
 - [Introducción](#introducción)
    - [Importante](#importante)
    - [Licencia](#licencia)
