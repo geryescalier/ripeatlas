@@ -16,6 +16,10 @@ Diagrama de dos sondas Ripe Atlas, contenedores LXC configurados con OpenWrt 24.
    - [Ordenador](#ordenador)
    - [Cuenta de usuario RIPE NCC](#cuenta-de-usuario-ripe-ncc)
    - [LXC Requisitos de Hardware Básicos](#lxc-requisitos-de-hardware-básicos)
+[Instalar LXC en Debian 11](#instalar-lxc-en-debian-11)
+   - [Crear un bridge de red para LXC](#crear-un-bridge-de-red-para-lxc)
+- [Crear el contenedor LXC con OpenWRT](#crear-el-contenedor-lxc-con-openwrt)
+   - [Configurar OpenWRT para obtener IP por DHCP](#configurar-openwrt-para-obtener-ip-por-dhcp) 
 # Introducción 
 Sitio web de [RIPE Atlas](https://atlas.ripe.net/) 
 ```
@@ -88,7 +92,7 @@ Instala LXC:
 ```
 apt install lxc
 ```
-# Crear un bridge de red para LXC
+## Crear un bridge de red para LXC
 Instala el paquete bridge-utils:
 ```
 apt install bridge-utils
@@ -138,7 +142,7 @@ Verifica que el contenedor esté funcionando:
 ```
 lxc-ls -f
 ```
-# Configurar OpenWRT para obtener IP por DHCP
+## Configurar OpenWRT para obtener IP por DHCP
 Accede al contenedor:
 ```
 lxc-attach -n openwrt
