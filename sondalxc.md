@@ -5,10 +5,17 @@
 Diagrama de dos sondas Ripe Atlas, contenedores LXC configurados con OpenWrt 24.10, server Debian 11.
 ```
 ![Diagrama de ejemplo Contenedor LXC con OpenWRT y Sonda Ripe Atlas ](https://github.com/geryescalier/ripeatlas/blob/main/imagenes/diagramalxcripeatlas1.svg)
-INDICE
+
+# INDICE
 - [Introducción](#introducción)
    - [Importante](#importante)
    - [Licencia](#licencia)
+- [Requisitos](#requisitos)
+   - [Ejecución de comandos](#ejecución-de-comandos)
+   - [Conexión a Internet](#conexión-a-internet)
+   - [Ordenador](#ordenador)
+   - [Cuenta de usuario RIPE NCC](#cuenta-de-usuario-ripe-ncc)
+   - [LXC Requisitos de Hardware Básicos](#lxc-requisitos-de-hardware-básicos)
 # Introducción 
 Sitio web de [RIPE Atlas](https://atlas.ripe.net/) 
 ```
@@ -57,13 +64,10 @@ No es necesaria una conexion a internet de alto ancho de banda, importante debe 
 ## Ordenador 
 Se recomienda un ordenador de mesa o portatil que tenga instalado distro Debian (GNU/Linux) o distro basada en Debian.
 
-
 ## Cuenta de usuario RIPE NCC
 Crea una cuenta en https://access.ripe.net/registration  (tu usuario sera tu correo electrónico)
 
-## LXC
-Requisitos de Hardware Básicos:
-
+## LXC Requisitos de Hardware Básicos
 - Procesador (CPU):Procesador 64 bits es recomendado, de 2 GHz o más es ideal. 
 - Memoria (RAM):2 GB de RAM o más es ideal
 - Almacenamiento: Un disco duro o SSD. Al menos 10 GB de espacio libre en el disco. Esto incluye espacio para el sistema operativo host, LXC, y los contenedores que planeas ejecutar.
