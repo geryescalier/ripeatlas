@@ -111,3 +111,19 @@ Reinicia el servicio de red:
 ```
 sudo systemctl restart networking
 ```
+# Crear el contenedor LXC con OpenWRT
+Descarga la imagen de OpenWRT 24.10 para LXC:
+```
+sudo lxc-create -n openwrt -t download -- --dist openwrt --release 24.10 --arch amd64
+```
+Configura el contenedor para utilizar el bridge br0:
+```
+sudo sed -i 's/lxc.network.type = empty/lxc.network.type = veth\nlxc.network.link = br0\nlxc.network.flags = up/' /var/lib/lxc/openwrt/config
+```
+Inicia el contenedor:
+```
+sudo lxc-start -n openwrt
+```
+Verifica que el contenedor esté funcionando:
+```
+sudo lxc-ls -f
