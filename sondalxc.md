@@ -71,33 +71,33 @@ Requisitos de Hardware Básicos:
 # Instalar LXC en Debian 11
 Actualiza el sistema:
 ```
-sudo apt update
-sudo apt full-upgrade
+apt update
+apt full-upgrade
 ```
 Instala LXC:
 ```
-sudo apt install lxc
+apt install lxc
 ```
 # Crear un bridge de red para LXC
 Instala el paquete bridge-utils:
 ```
-sudo apt install bridge-utils
+apt install bridge-utils
 ```
 Crea un bridge de red llamado br0:
 ```
-sudo brctl addbr br0
+brctl addbr br0
 ```
 Agrega la interfaz física eth0 al bridge (reemplaza eth0 con la interfaz que estés utilizando):
 ```
-sudo brctl addif br0 eth0
+brctl addif br0 eth0
 ```
 Configura la IP del bridge (si lo deseas):
 ```
-sudo ip addr add 192.168.1.100/24 dev br0
+ip addr add 192.168.1.100/24 dev br0
 ```
 Activa el bridge:
 ```
-sudo ip link set br0 up
+ip link set br0 up
 ```
 Edita el archivo /etc/network/interfaces para que el bridge se active automáticamente al arrancar el sistema:
 ```
@@ -109,21 +109,41 @@ iface br0 inet dhcp
 ```
 Reinicia el servicio de red:
 ```
-sudo systemctl restart networking
+systemctl restart networking
 ```
 # Crear el contenedor LXC con OpenWRT
 Descarga la imagen de OpenWRT 24.10 para LXC:
 ```
-sudo lxc-create -n openwrt -t download -- --dist openwrt --release 24.10 --arch amd64
+lxc-create -n openwrt -t download -- --dist openwrt --release 24.10 --arch amd64
 ```
 Configura el contenedor para utilizar el bridge br0:
 ```
-sudo sed -i 's/lxc.network.type = empty/lxc.network.type = veth\nlxc.network.link = br0\nlxc.network.flags = up/' /var/lib/lxc/openwrt/config
+sed -i 's/lxc.network.type = empty/lxc.network.type = veth\nlxc.network.link = br0\nlxc.network.flags = up/' /var/lib/lxc/openwrt/config
 ```
 Inicia el contenedor:
 ```
-sudo lxc-start -n openwrt
+lxc-start -n openwrt
 ```
 Verifica que el contenedor esté funcionando:
 ```
-sudo lxc-ls -f
+lxc-ls -f
+```
+# Configurar OpenWRT para obtener IP por DHCP
+Accede al contenedor:
+```
+lxc-attach -n openwrt
+```
+Edita el archivo de configuración de la red /etc/config/network para que tenga el siguiente contenido:
+```
+config interface 'lan'
+    option ifname 'eth0'
+    option proto 'dhcp'
+```
+Reinicia el servicio de red:
+```
+service network restart
+```
+Verifica que OpenWRT haya obtenido una IP por DHCP:
+```
+ip addr show eth0
+```
