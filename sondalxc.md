@@ -245,7 +245,7 @@ Comandos disponibles:
 - load_backup 'backup.tar.gz' carga la clave ssh de copia de seguridad desde tar.gz
 - create_key  crea la clave priv/pub de la sonda
 </pre>
-Ejempo :
+Ejemplo :
 ```
 # /etc/init.d/atlas start
 running
