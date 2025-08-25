@@ -4,7 +4,7 @@
 ```
 Diagrama de dos sondas Ripe Atlas, contenedores LXC configurados con OpenWrt 24.10, server Debian 11.
 ```
-![Diagrama de ejemplo Contenedor LXC con OpenWRT y Sonda Ripe Atlas ](https://github.com/geryescalier/ripeatlas/blob/main/imagenes/diagramalxcripeatlas1.svg)
+![Diagrama de ejemplo Contenedor LXC con OpenWRT y Sonda Ripe Atlas ](https://github.com/geryescalier/ripeatlas/blob/main/imagenes/dlxcripeatlas.svg)
 
 # INDICE
 - [Introducción](#introducción)
