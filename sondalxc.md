@@ -161,3 +161,87 @@ Verifica que OpenWRT haya obtenido una IP por DHCP:
 ```
 ip addr show eth0
 ```
+# Instalar en OpenWrt Ripe Atlas
+- Necesitamos instalar los paquetes de Ripe Atlas para que trabajen en tu Router, continuamos desde el paso anterior, ingresa comando
+```
+opkg update
+```
+El anterior comando actualiza los paquetes de tu Router, ahora podemos realizar la instalacion de los paquetes de Ripe Atlas, ingresa el comando
+```
+opkg install atlas-sw-probe
+```
+
+## Configurar sonda Ripe Atlas
+- Ahora podemos configurar los paquetes de Ripe Atlas, ingresa comando 
+```
+vi /etc/atlas/atlas.readme
+```
+Nos mostrara la siguiente información (en ingles) se ha realizado algunos cambios con respecto al readme original.
+```
+Para salir del archivo  /atlas.readme selecciona las teclas ":q" sin las comillas y la tecla enter.
+```
+El software de la sonda atlas requiere una clave rsa 2048-4096 para el registro.
+
+## Pasos previos para registrar sonda
+
+- Inserta tu nombre de usuario en el archivo de configuración de atlas, usa el comando
+```
+vi /etc/config/atlas
+```
+- Selecciona tecla "i" para insertar 
+- Debes ubicar el cursor (usando las flechas de tu teclado) en la linea, option username 'ingresa aqui tu nombre usuario' (tu usuario es el correo electronico con el que creaste tu cuenta en la pagina de RIPE NCC)
+- Presiona tecla "Esc"
+- Para guardar y salir presiona las teclas ":wq"  >>> sin las comillas.
+- Crearemos una clave priv/pub. Usa el comando
+```
+/etc/init.d/atlas create_key
+```
+La clave priv/pub se almacenará en el directorio /etc/atlas/
+
+Usa el comando
+```
+/etc/init.d/atlas get_key 
+```
+para obtener la clave pública utilizada para el registro de la sonda.
+```
+Asegúrate de copiar la clave completa y que el último valor sea el nombre de usuario correcto.
+```
+- Cuando termines de realizar las configuraciones anteriores, ejecuta los siguientes comandos:
+``` 
+/etc/init.d/atlas start
+```
+```
+/etc/init.d/atlas enable
+```
+```
+/etc/init.d/atlas enabled
+```
+```
+/etc/init.d/atlas status 
+```
+solo en ultimo comando (status) veras un mensaje "running" esto confirma que se esta ejecutando Ripe Atlas en tu router.
+
+## Comandos Ripe Atlas
+Mira los comandos disponibles ingresando el comando
+```
+/etc/init.d/atlas 
+```
+<pre>
+Comandos disponibles:
+
+- start      Iniciar el servicio
+- stop       Detener el servicio
+- restart    Reiniciar el servicio
+- reload     Recargar archivos de configuración (o reiniciar si el servicio no implementa la recarga)
+- enable     Habilitar el inicio automático del servicio
+- disable    Deshabilitar el inicio automático del servicio
+- enabled    Comprobar si el servicio se inicia en el arranque
+- running    Comprobar si el servicio se está ejecutando
+- status     Estado del servicio
+- trace      Comenzar con rastreo de llamada al sistema
+- get_key    imprime la clave pública de la sonda (utilizada para el registro de la sonda)
+- probeid    imprime el id de la sonda
+- log        imprimir registro de estado de la sonda
+- load_backup 'backup.tar.gz' carga la clave ssh de copia de seguridad desde tar.gz
+- create_key  crea la clave priv/pub de la sonda
+</pre>
