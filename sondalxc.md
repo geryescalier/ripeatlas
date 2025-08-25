@@ -1,4 +1,3 @@
-# :warning: EN CONSTRUCCION
 # TU PRIMER SONDA POR SOFTWARE EN CONTENEDORES LXC - RIPE ATLAS
 
 ```
@@ -251,3 +250,72 @@ Ejemplo :
 running
 #
 ```
+# Registro de sonda por software
+Debes tener activa tu sesión en la pagina de RIPE NCC, ingresa en https://atlas.ripe.net/apply/swprobe/
+
+Ingresaras al formulario para completar los datos.
+
+## AS Number
+Para conocer tu [Sistema Autonomo](https://es.wikipedia.org/wiki/Sistema_aut%C3%B3nomo) (AS number) debes identificar cual es la ip publica que tienes asignada.
+### Conocer tu IP pública y ASN desde la web
+- Ingresa en https://www.ripe.net/ en la parte inferior del todo de la pagina, veras:
+```
+Your IP address is: xx.xx.xx.xx <<< mostrara tu ip pública
+```
+- Da click a tu ip (Your IP address is: xx.xx.xx.xx ) te llevara a una nueva pagina.
+- En la nueva pagina busca  la sección, origin:  
+```
+origin:         AS (AQUI MOSTRARA LA NUMERACION DE TU AS)
+```
+- En el formulario solo debes poner los números de tu AS
+```
+origin:          AS12757
+```
+- En el formulario solo debes ingresar 12757
+
+### Conocer tu ASN desde cli
+
+- Desde tu cli favorito usa el comando seguido de tu ip:
+```
+# whois (aqui tu ip)
+```
+- Busca la linea que ponga:
+```
+origin:         AS(AQUI MOSTRARA LA NUMERACION DE TU AS)
+```
+- En el formulario solo debes poner los números de tu AS
+```
+origin:          AS12757
+
+En el formulario solo debes ingresar 12757
+```
+## City
+
+Tu ciudad
+
+## Country
+
+Tu país 
+
+## Public Key
+- En tu router openwrt, usa el comando 
+```
+/etc/init.d/atlas get_key 
+```
+obtendras la clave pública utilizada para el registro de la sonda.
+- Asegúrate de copiar la clave completa y que el último valor sea el nombre de usuario correcto.
+
+## Notes
+Ingresa alguna referencia general con la que quieras identificar tu sonda, por ejemplo: Sonda Mi universidad // Sonda Mi Zona // Otros.
+
+## I accept the RIPE Atlas Service Terms and Conditions
+- Lee y acepta los términos y condiciones (el recuadro debe estar seleccionado)
+- Para enviar el formulario selecciona > Submit your application
+
+Recibirás los siguientes correos:
+- Thank you for applying for a RIPE Atlas software probe! (¡Gracias por solicitar una sonda de software RIPE Atlas!)
+- Recibirás un segundo correo en unos 15 a 30 minutos (el tiempo puede variar): Your new RIPE Atlas software probe is created (Se ha creado tu nueva sonda de software RIPE Atlas)
+- Ingresa en https://atlas.ripe.net/ con tu usuario activo, selecciona > Probes and Anchors > Probes > podrás ver información de tu sonda activa.
+
+# Fin
+¡Felicidades ya tienes tu sonda configurada y registrada!
