@@ -18,7 +18,11 @@ Diagrama de dos sondas Ripe Atlas, contenedores LXC configurados con OpenWrt 24.
 - [Instalar LXC en Debian 11](#instalar-lxc-en-debian-11)
    - [Crear un bridge de red para LXC](#crear-un-bridge-de-red-para-lxc)
 - [Crear el contenedor LXC con OpenWRT](#crear-el-contenedor-lxc-con-openwrt)
-   - [Configurar OpenWRT para obtener IP por DHCP](#configurar-openwrt-para-obtener-ip-por-dhcp) 
+   - [Configurar OpenWRT para obtener IP por DHCP](#configurar-openwrt-para-obtener-ip-por-dhcp)
+- [Instalar en OpenWrt Ripe Atlas](#instalar-en-openwrt-ripe-atlas)
+   - [Configurar sonda Ripe Atlas](#configurar-sonda-ripe-atlas)
+   - [Pasos previos para registrar sonda](#pasos-previos-para-registrar-sonda)
+   - [Comandos Ripe Atlas](#comandos-ripe-atlas) 
 # Introducción 
 Sitio web de [RIPE Atlas](https://atlas.ripe.net/) 
 ```
