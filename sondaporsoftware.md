@@ -319,9 +319,9 @@ En el formulario solo debes ingresar 12757
 Tu ciudad
 
 ## Country
-```
+
 Tu país 
-```
+
 ## Public Key
 - Usa el comando 
 ```
