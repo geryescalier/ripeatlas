@@ -22,7 +22,16 @@ Diagrama de dos sondas Ripe Atlas, contenedores LXC configurados con OpenWrt 24.
 - [Instalar en OpenWrt Ripe Atlas](#instalar-en-openwrt-ripe-atlas)
    - [Configurar sonda Ripe Atlas](#configurar-sonda-ripe-atlas)
    - [Pasos previos para registrar sonda](#pasos-previos-para-registrar-sonda)
-   - [Comandos Ripe Atlas](#comandos-ripe-atlas) 
+   - [Comandos Ripe Atlas](#comandos-ripe-atlas)
+- [Registro de sonda por software](#registro-de-sonda-por-software)
+    - [AS Number](#as-number)   
+      - [Conocer tu IP pública y ASN desde la web](#conocer-tu-ip-pública-y-asn-desde-la-web)   
+      - [Conocer tu ASN desde cli](#conocer-tu-asn-desde-cli)  
+    - [City](#city)   
+    - [Country](#country)   
+    - [Public Key](#public-key)   
+    - [I accept the RIPE Atlas Service Terms and Conditions](#i-accept-the-ripe-atlas-service-terms-and-conditions)   
+- [Fin](#fin)   
 # Introducción 
 Sitio web de [RIPE Atlas](https://atlas.ripe.net/) 
 ```
